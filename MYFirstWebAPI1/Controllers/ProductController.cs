@@ -54,12 +54,17 @@ namespace MYFirstWebAPI1.Controllers
 
         // This method would the delete the product
         [HttpDelete]
-        public string DeleteProduct(int id)
+        public string DeleteProduct(int productId)
         {
-            product = productDBEntities.Products.Find(id);
+            product = productDBEntities.Products.Find(productId);
             productDBEntities.Products.Remove(product);
             productDBEntities.SaveChanges();
             return "The product is deleted";
+        }
+
+        public string Message()
+        {
+            return "HelloWorld";
         }
 
 
